@@ -28,9 +28,10 @@ class MainWindow(QMainWindow):
         self.top = 50
         self.width = 960
         self.height = 960
-
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
+        icon = __file__[:-7] + 'Moss.svg'
+        self.setWindowIcon(QIcon(icon))
 
         self.statusBar().showMessage('Ready')
 
@@ -457,7 +458,6 @@ class PlotCanvas(FigureCanvas):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon('codepen.svg'))
     mainWin = MainWindow()
     mainWin.show()
     sys.exit(app.exec_())
