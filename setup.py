@@ -3,12 +3,8 @@ Setup.py for Moss
 """
 import os
 import sys
-# import time
-# import shutil
-# import subprocess
-# import importlib
 import setuptools
-from pyshortcuts import make_shortcut
+
 
 HAS_CONDA = os.path.exists(os.path.join(sys.prefix, 'conda-meta'))
 
