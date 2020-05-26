@@ -6,9 +6,8 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow, QAction, QVBoxL
 from PyQt5.QtGui import QIcon
 # from PyQt5.QtCore import QSize
 
-from .IntrctPeaks import setconstrain, setvalue, printParams, setlimit
+from .IntrctPeaks import MossMod
 
-import IntrctPeaks as Intrct
 
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
@@ -17,6 +16,9 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 
 import pickle
+
+
+Intrct = MossMod()
 
 
 class MainWindow(QMainWindow):
@@ -351,7 +353,8 @@ class MainWindow(QMainWindow):
 
         comps = Intrct.FitModel.eval_components(x=self.x)
         for c in Intrct.FitModel.components:
-            c.line, = self.WP.canvas.ax.plot(self.x, comps[c.prefix], label=c.prefix)
+            c.line, = self.WP.canvas.ax.plot(
+                self.x, comps[c.prefix], label=c.prefix)
         self.file_open(open=False)
 
     def RemPeak(self):
@@ -364,7 +367,8 @@ class MainWindow(QMainWindow):
             thisline.remove()
             Intrct.remove_comp(prefix)
             self.WP.canvas.mpl_disconnect(self.pick_id)
-            self.pick_id = self.WP.canvas.mpl_connect('pick_event', self.onpick)
+            self.pick_id = self.WP.canvas.mpl_connect(
+                'pick_event', self.onpick)
             self.fit_line.set_ydata(Intrct.FitModelEval(x=self.x))
             self.WP.canvas.draw()
 
@@ -401,7 +405,8 @@ class MainWindow(QMainWindow):
                         comp.param_hints['center']['value'] = C_1 + delta_q / 2
                         comp.param_hints['qs']['value'] = Q_1 + delta_q
                     else:
-                        comp.param_hints['center']['value'] = (C_1 + delta_q / 2)
+                        comp.param_hints['center']['value'] = (
+                            C_1 + delta_q / 2)
                         comp.param_hints['qs']['value'] = Q_1 - delta_q
             else:
                 print('nbutton', nbutton)
@@ -424,7 +429,8 @@ class MainWindow(QMainWindow):
         but_n = event.mouseevent.button
         self.mid = self.WP.canvas.mpl_connect('motion_notify_event',
                                               lambda x: move(x, but_n.value))
-        self.rid = self.WP.canvas.mpl_connect('button_release_event', self.clk_r)
+        self.rid = self.WP.canvas.mpl_connect(
+            'button_release_event', self.clk_r)
         self.WP.canvas.mpl_disconnect(self.pick_id)
 
     def clk_r(self, event):
@@ -451,16 +457,34 @@ class PlotCanvas(FigureCanvas):
         fig = Figure(figsize=(width, height), dpi=dpi)
         FigureCanvas.__init__(self, fig)
         self.setParent(parent)
-        FigureCanvas.setSizePolicy(self, QSizePolicy.Expanding, QSizePolicy.Expanding)
+        FigureCanvas.setSizePolicy(
+            self, QSizePolicy.Expanding, QSizePolicy.Expanding)
         FigureCanvas.updateGeometry(self)
         self.ax = self.figure.add_subplot(111)
 
 
 def MossLauncher():
-    app = QApplication(sys.argv)
-    mainWin = MainWindow()
-    mainWin.show()
-    sys.exit(app.exec_())
+    def setconstrain(par_n, expr=None):
+        Intrct.FitModel.set_param_hint(par_n, expr=expr)
+
+    def setvalue(par_n, expr):
+        Intrct.FitModel.set_param_hint(par_n, value=expr)
+
+    def setlimit(par_n, minmax, value):
+        Intrct.FitModel.param_hint[par_n][minmax] = value
+
+    def printParams():
+        print('\n' * 2)
+        print('#' * 5)
+        for i in Intrct.FitModel.make_params().values():
+            print(i)
+        print('#' * 5)
+        print('\n' * 2)
+
+        app = QApplication(sys.argv)
+        mainWin = MainWindow()
+        mainWin.show()
+        sys.exit(app.exec_())
 
 
 if __name__ == "__main__":
