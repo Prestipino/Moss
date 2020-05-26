@@ -17,3 +17,4 @@ requirements:
         - numpy 1.18.*
         - pyqt
         - lmfit
+        - pyshortcuts
