@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow, QAction, QVBoxL
 from PyQt5.QtGui import QIcon
 # from PyQt5.QtCore import QSize
 
-from IntrctPeaks import setconstrain, setvalue, printParams, setlimit
+from .IntrctPeaks import setconstrain, setvalue, printParams, setlimit
 
 import IntrctPeaks as Intrct
 
