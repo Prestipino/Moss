@@ -1,8 +1,8 @@
 import numpy as np
-from peak_shape import (PseudoVoigtModel, LorentzianModel, GaussianModel,
-                        DPseudoVoigtModel, DLorentzianModel, DGaussianModel,
-                        HDPseudoVoigtModel, HDLorentzianModel, HDGaussianModel,
-                        HPseudoVoigtModel, HLorentzianModel, HGaussianModel)
+from .peak_shape import (PseudoVoigtModel, LorentzianModel, GaussianModel,
+                         DPseudoVoigtModel, DLorentzianModel, DGaussianModel,
+                         HDPseudoVoigtModel, HDLorentzianModel, HDGaussianModel,
+                         HPseudoVoigtModel, HLorentzianModel, HGaussianModel)
 from lmfit.models import LinearModel
 
 from functools import reduce
