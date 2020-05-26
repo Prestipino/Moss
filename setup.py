@@ -67,5 +67,3 @@ setuptools.setup(
     python_requires='>=3.6',
 )
 
-make_shortcut(script=pjoin(sys.exec_prefix, bindir, 'Moss'),
-              name='Moss', icon='Moss\\Moss.ico') 
