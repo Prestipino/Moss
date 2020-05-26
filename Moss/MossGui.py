@@ -1,13 +1,12 @@
 import sys
 import numpy as np
+import pickle
+import os
+
 from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow, QAction, QVBoxLayout, QHBoxLayout,
                              QLabel, QLineEdit, QSpacerItem, QSizePolicy, QPushButton, QComboBox, QFileDialog)
 
 from PyQt5.QtGui import QIcon
-# from PyQt5.QtCore import QSize
-
-from .IntrctPeaks import MossMod
-
 
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
@@ -15,7 +14,13 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 
-import pickle
+from pyshortcuts import make_shortcut
+
+
+# from PyQt5.QtCore import QSize
+
+from .IntrctPeaks import MossMod
+
 
 
 Intrct = MossMod()
@@ -482,7 +487,13 @@ class PlotCanvas(FigureCanvas):
         self.ax = self.figure.add_subplot(111)
 
 
-def MossLauncher():
+def MossLauncher(create_icons=None):
+    if create_icons:
+        uname = sys.platform.lower()
+        bindir = 'Scripts' if uname == 'win' else 'bin'
+        script = os.path.join(sys.exec_prefix, bindir, 'Moss')
+        icon = __file__[:-10] + 'Moss.ico'
+        make_shortcut(script, name='Moss', icon=icon)
     app = QApplication(sys.argv)
     mainWin = MainWindow()
     mainWin.show()

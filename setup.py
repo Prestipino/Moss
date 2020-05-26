@@ -54,7 +54,7 @@ setuptools.setup(
     long_description=open('README.txt').read(),
     packages=setuptools.find_packages(),
     package_data={'Moss': package_data},
-    entry_points = {'console_scripts' : ['Moss = Moss.MossGui:MossLauncher']},
+    entry_points={'console_scripts': ['Moss = Moss.MossGui:MossLauncher']},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
@@ -62,4 +62,3 @@ setuptools.setup(
     ],
     python_requires='>=3.6',
 )
-
