@@ -21,6 +21,25 @@ import pickle
 Intrct = MossMod()
 
 
+def setconstrain(par_n, expr=None):
+    Intrct.FitModel.set_param_hint(par_n, expr=expr)
+
+
+def setvalue(par_n, expr):
+    Intrct.FitModel.set_param_hint(par_n, value=expr)
+
+
+def setlimit(par_n, minmax, value):
+    Intrct.FitModel.param_hint[par_n][minmax] = value
+
+
+def printParams():
+    print('\n' * 2, '#' * 5)
+    for i in Intrct.FitModel.make_params().values():
+        print(i)
+    print('#' * 5, '\n' * 2)
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -32,7 +51,7 @@ class MainWindow(QMainWindow):
         self.height = 960
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
-        icon = __file__[:-7] + 'Moss.svg'
+        icon = __file__[:-10] + 'Moss.svg'
         self.setWindowIcon(QIcon(icon))
 
         self.statusBar().showMessage('Ready')
@@ -464,27 +483,10 @@ class PlotCanvas(FigureCanvas):
 
 
 def MossLauncher():
-    def setconstrain(par_n, expr=None):
-        Intrct.FitModel.set_param_hint(par_n, expr=expr)
-
-    def setvalue(par_n, expr):
-        Intrct.FitModel.set_param_hint(par_n, value=expr)
-
-    def setlimit(par_n, minmax, value):
-        Intrct.FitModel.param_hint[par_n][minmax] = value
-
-    def printParams():
-        print('\n' * 2)
-        print('#' * 5)
-        for i in Intrct.FitModel.make_params().values():
-            print(i)
-        print('#' * 5)
-        print('\n' * 2)
-
-        app = QApplication(sys.argv)
-        mainWin = MainWindow()
-        mainWin.show()
-        sys.exit(app.exec_())
+    app = QApplication(sys.argv)
+    mainWin = MainWindow()
+    mainWin.show()
+    sys.exit(app.exec_())
 
 
 if __name__ == "__main__":
