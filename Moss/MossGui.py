@@ -14,9 +14,6 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 
-from pyshortcuts import make_shortcut
-
-
 # from PyQt5.QtCore import QSize
 
 from .IntrctPeaks import MossMod
@@ -489,6 +486,7 @@ class PlotCanvas(FigureCanvas):
 
 def MossLauncher(create_icons=None):
     if create_icons:
+        from pyshortcuts import make_shortcut
         uname = sys.platform.lower()
         bindir = 'Scripts' if uname == 'win' else 'bin'
         script = os.path.join(sys.exec_prefix, bindir, 'Moss')
