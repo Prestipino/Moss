@@ -2,6 +2,7 @@ package:
     name: moss
     version: '0.1'
 source:
+    # src: /Moss/Moss
     git_depth: '1'
     git_url: https://github.com/Prestipino/Moss.git
 requirements:
@@ -22,12 +23,10 @@ requirements:
         - wheel 0.34.2 py_1
         - pip 20.1.1 pyh9f0ad1d_0
     run:
-        - python >=3.7,<3.8.0a0
+        - python >=3.7
         - matplotlib
         - numpy 1.18.*
         - pyqt
         - lmfit
         - python_abi 3.7.* *_cp37m
-extra:
-    copy_test_source_files: true
-    final: true
+
