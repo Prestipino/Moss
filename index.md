@@ -6,14 +6,14 @@ The full spectra is defined as a sum of several contributions (sites, species) p
 At the moment are implemented lorentzian, pseuvovoight and gaussian lineshapes, and the contribution could be defined as singlets,doublets and sextets.
 The the fitting parameters of each contribution are center shift, FWHM, quadrupole splitting and magnetic hyperfine splitting.
 
-The program written in Python making use of the lmfit library for fitting and matplotlib for graphyc representation and the toolkit used is pyQT5.
-At the user it appears as two windows:
+The program written in Python making use of the lmfit library for fitting and matplotlib for graphycal representation and the toolkit used is pyQT5.
+The optimization is performed by Levenberg–Marquardt least-squares method as implemented in scipy library. Such method is known to be be biased by the choice of initial parameters of fitting model, however we consider to mitigarte such problem by the use of a fully interactive user interface allowing to easily explore the space of solutions without ther necessity of minimization.
+
+From the point of view of the user the program appears as two windows:
 * a shell like windows (Figure 1) in which info and fit results are printed, for interaction with the user
 ![Figure 1](https://github.com/Prestipino/Moss/blob/gh-pages/Clipboard02.png)
-
-It has a  graphical user interface (GUI) that allows to build and modifies fitting model by only mouse interaction 
-
-
+* A  graphical user interface (GUI) that allows to build and modifies fitting model.  
+![Figure 2](https://github.com/Prestipino/Moss/blob/gh-pages/Clipboard01.png)
 
 
 can be kept constant or can be constrained to fall within specific ranges intheir search space during fitting
