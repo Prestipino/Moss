@@ -11,7 +11,7 @@ The optimization is performed by Levenberg–Marquardt least-squares method as i
 
 From the point of view of the user the program appears as two windows:
 * a shell like windows (Figure 1) in which info and fit results are printed, for interaction with the user:
-![](https://github.com/Prestipino/Moss/blob/gh-pages/Clipboard01b.png)
+![](./Clipboard01b.png)
 * A  graphical user interface (GUI) that allows to build and modifies fitting model:
 
 
