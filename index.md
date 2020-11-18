@@ -13,7 +13,7 @@ From the point of view of the user the program appears as two windows:
 * a shell like windows (Figure 1) in which info and fit results are printed, for interaction with the user
 
 * A  graphical user interface (GUI) that allows to build and modifies fitting model.  
-![Figure 2](https://github.com/Prestipino/Moss/blob/gh-pages/Clipboard01b.png)
+![Figure 2](./Clipboard01b.png)
 
 
 can be kept constant or can be constrained to fall within specific ranges intheir search space during fitting
