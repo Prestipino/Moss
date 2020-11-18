@@ -10,10 +10,10 @@ The program written in Python making use of the lmfit library for fitting and ma
 The optimization is performed by Levenberg–Marquardt least-squares method as implemented in scipy library. Such method is known to be be biased by the choice of initial parameters of fitting model, however we consider to mitigarte such problem by the use of a fully interactive user interface allowing to easily explore the space of solutions without ther necessity of minimization.
 
 From the point of view of the user the program appears as two windows:
-* a shell like windows (Figure 1) in which info and fit results are printed, for interaction with the user
-![](./clipboard02.png )
-* A  graphical user interface (GUI) that allows to build and modifies fitting model:
+* a shell like windows (Figure 1) in which info and fit results are printed, for interaction with the user:
 ![](./clipboard01b.png)
+* A  graphical user interface (GUI) that allows to build and modifies fitting model:
+
 
 
 can be kept constant or can be constrained to fall within specific ranges intheir search space during fitting
