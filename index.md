@@ -20,7 +20,7 @@ From the point of view of the user the program appears as two windows:
 ![figure2](./gui.png)
 the gui is composed of three rows
 the header that allows to add and remove contributions. The kind of contribution is defined by the values of combobox widget, after the button  "Add +" is pressed a set of instruction about how interact with the program will appear in the shell windows
-![figure2](./gui_1.png)
+![](./gui_1.png)
 
 
 Moss is devoted to the rapid and user interactive analysisof complex Mossbauer spectra, made possible by its interactive graphical user input without any programming knowledge.
