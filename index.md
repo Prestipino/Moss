@@ -18,11 +18,16 @@ From the point of view of the user the program appears as two windows:
 
 * ### A  graphical user interface (GUI) that allows to build and modifies fitting model:
 ![figure2](./gui.png)
+
+
 the gui is composed of three rows
-the header that allows to add and remove contributions. The kind of contribution is defined by the values of combobox widget, after the button  "Add +" is pressed a set of instruction about how interact with the program will appear in the shell windows
+the **header** that allows to add and remove contributions. The kind of contribution is defined by the values of combobox widget, after the button  "Add +" is pressed a set of instruction about how interact with the program will appear in the shell windows
 ![](./gui_1.png)
 
+the **header** that allows to add and remove contributions. The kind of contribution is defined by the values of combobox widget, after the button  "Add +" is pressed a set of instruction about how interact with the program will appear in the shell windows
+![](./gui_1.png)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 Moss is devoted to the rapid and user interactive analysisof complex Mossbauer spectra, made possible by its interactive graphical user input without any programming knowledge.
 At the moment Moss does not perform complete transmission integrals, and any kind of quadrupolesplitting distributions are implemented and it will therefore not be suited for a complete analysis of all types of Mössbauer spectra.
 
