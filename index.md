@@ -34,12 +34,12 @@ The **graphic** frame allows to modify with mouse interaction. On the top of the
 
 the **eval** frames allows to directly send instructions to the lmfit library. It will allows to set constrains or range limits for different parameters, a set of instruction examples are printed on the line.
 At present this set of instruction has been implemented
-***setconstrain('g1_H', 'g2_H*2')***  set that parameter g1_H must be 2 times parameter g2_H
-***setvalue('g1_center', 5)***  set initial parameter g1_center to the 5 value
-***setlimits('g1_mgs', 'min', 2)***  set minimum for parameter 'g1_mgs' 
-***setlimits('g1_mgs', 'max', 5)***  set maximum for parameter 'g1_mgs' 
-***setlimits('g1_H', 'vary', False)***  fix parameter 'g1_H' to the current value
-***printParams()***
+- ***setconstrain('g1_H', 'g2_H*2')***  set that parameter g1_H must be 2 times parameter g2_H
+- ***setvalue('g1_center', 5)***  set initial parameter g1_center to the 5 value
+- ***setlimits('g1_mgs', 'min', 2)***  set minimum for parameter 'g1_mgs' 
+- ***setlimits('g1_mgs', 'max', 5)***  set maximum for parameter 'g1_mgs' 
+- ***setlimits('g1_H', 'vary', False)***  fix parameter 'g1_H' to the current value
+- ***printParams()*** print on the shell the definition of parasmeter, useful to check ;-)
 ![](./gui_3.png)
 
 
