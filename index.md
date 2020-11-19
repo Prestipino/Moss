@@ -33,24 +33,24 @@ The **graphic** frame allows to modify with mouse interaction. On the top of the
 
 
 the **eval** frames allows to directly send instructions to the lmfit library. It will allows to set constrains or range limits for different parameters, a set of instruction examples are printed on the line.
-At present this set of instruction has been implemented: - ***setconstrain('g1_H', 'g2_H*2')***  set that parameter g1_H must be 2 times parameter g2_H
+```markdown
+At present this set of instruction has been implemented: 
+- ***setconstrain('g1_H', 'g2_H*2')***  set that parameter g1_H must be 2 times parameter g2_H
 - ***setvalue('g1_center', 5)***  set initial parameter g1_center to the 5 value
 - ***setlimits('g1_mgs', 'min', 2)***  set minimum for parameter 'g1_mgs' 
 - ***setlimits('g1_mgs', 'max', 5)***  set maximum for parameter 'g1_mgs' 
 - ***setlimits('g1_H', 'vary', False)***  fix parameter 'g1_H' to the current value
 - ***printParams()*** print on the shell the definition of parasmeter, useful to check ;-)
+```
 ![](./gui_3.png)
 
 
+
+
+
 Moss is devoted to the rapid and user interactive analysis of complex Mössbauer spectra, made possible by its interactive graphical user input without any programming knowledge.
-At the moment Moss does not perform complete transmission integrals, and any kind of quadrupole splitting distributions are implemented and it will therefore not be suited for a complete analysis of all types of Mössbauer spectra. The program is still in a beta stage and improvements are in progress of implementation.
+At the moment Moss does not perform complete transmission integrals, and any kind of quadrupole splitting distributions are implemented and it will therefore not be suited for a complete analysis of all types of Mössbauer spectra. The program is still in a beta stage and several improvements are in progress of implementation.
 
 <iframe width="560" height="315"  src="https://www.youtube.com/embed/ypmjMZGB43E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-
-```markdown
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-```
 
