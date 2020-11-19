@@ -22,7 +22,7 @@ From the point of view of the user the program appears as two windows:
 
 
 
-======
+--------------
 
 The gui is composed of three frames placed in a column 
 the **header** frame allows to add and remove contributions (sites, species) to the spectra. The type of contribution is defined by the values of combobox widgets and, after the button  "Add +" is pressed a set of instruction about how interact with the program will appear in the shell window.
@@ -33,8 +33,7 @@ The **graphic** frame allows to modify with mouse interaction. On the top of the
 
 
 the **eval** frames allows to directly send instructions to the lmfit library. It will allows to set constrains or range limits for different parameters, a set of instruction examples are printed on the line.
-At present this set of instruction has been implemented
-- ***setconstrain('g1_H', 'g2_H*2')***  set that parameter g1_H must be 2 times parameter g2_H
+At present this set of instruction has been implemented: - ***setconstrain('g1_H', 'g2_H*2')***  set that parameter g1_H must be 2 times parameter g2_H
 - ***setvalue('g1_center', 5)***  set initial parameter g1_center to the 5 value
 - ***setlimits('g1_mgs', 'min', 2)***  set minimum for parameter 'g1_mgs' 
 - ***setlimits('g1_mgs', 'max', 5)***  set maximum for parameter 'g1_mgs' 
